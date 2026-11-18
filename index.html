@@ -3,6 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Gala 8° B</title>
+<meta name="claude:viewport-fit-sides" content="cover">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://gala8vo.github.io/invitacion/">
 <meta property="og:title" content="Nuestra gala - 8vo B">
@@ -13,9 +15,6 @@
 <meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:image" content="https://gala8vo.github.io/invitacion/miniatura-gala-8vo-B.jpg">
-
-<title>Gala 8° B</title>
-<meta name="claude:viewport-fit-sides" content="cover">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500;1,600&family=Montserrat:wght@300;400;500;600&family=Pinyon+Script&display=swap" rel="stylesheet">
@@ -126,6 +125,10 @@
   .eyebrow{
     margin:0;font-weight:500;font-size:clamp(10px,2.8cqw,13px);letter-spacing:.34em;text-transform:uppercase;color:var(--graphite);
   }
+  .count.two{grid-template-columns:repeat(2,1fr);margin-top:6cqw}
+  .count.two .num{font-size:10cqw}
+  .count.two .lbl{letter-spacing:.16em;line-height:1.6;padding-inline:3cqw;font-size:clamp(9px,2.5cqw,11.5px)}
+  .punctual{margin:6cqw auto 0;font-family:var(--font-serif);font-style:italic;font-weight:600;font-size:clamp(19px,5.6cqw,26px);line-height:1.3}
   .rule{width:12cqw;height:1px;background:var(--gold-deep);margin:5cqw auto 0;opacity:.7}
 
   .count{display:grid;grid-template-columns:repeat(4,1fr);margin:7cqw auto 0;max-width:100%}
@@ -264,7 +267,7 @@
       <p class="sub rise d2">Graduación de<br>8vo Básico</p>
       <p class="date-script rise d3">6 de diciembre de 2026</p>
       <p class="addr rise d3">Jorge Guerra 84,<br>Maipú</p>
-      <p class="time-line rise d4">Domingo · 18:00 hrs</p>
+      <p class="time-line rise d4">Domingo · 19:00 hrs</p>
     </div>
 
     <p class="toss-hint">Toca los birretes para lanzarlos</p>
@@ -308,6 +311,16 @@
     <p class="message">«Con orgullo por lo vivido y entusiasmo por el mañana, te invitamos a celebrar nuestra gran noche de gala.»</p>
   </section>
 
+  <!-- ===== HORARIOS ===== -->
+  <section class="inner reveal" aria-labelledby="h-time">
+    <p class="eyebrow" id="h-time">Horarios · domingo 6 de diciembre</p>
+    <div class="count two">
+      <div><span class="num">18:30</span><span class="lbl">Apertura del local y estacionamientos</span></div>
+      <div><span class="num">19:00</span><span class="lbl">Inicio de la gala</span></div>
+    </div>
+    <p class="punctual">Se solicita puntualidad</p>
+  </section>
+
   <!-- ===== FECHA Y LUGAR ===== -->
   <section class="inner reveal" aria-labelledby="h-where">
     <p class="eyebrow" id="h-where">Ubicación</p>
@@ -320,7 +333,7 @@
     </div>
     <div class="btn-row">
       <a class="btn ghost" href="https://www.google.com/maps/dir/?api=1&destination=Jorge+Guerra+84,+Maip%C3%BA,+Regi%C3%B3n+Metropolitana" target="_blank" rel="noopener">Cómo llegar</a>
-      <a class="btn ghost" href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=Gala+8%C2%B0+B&dates=20261206T210000Z/20261207T020000Z&location=Jorge+Guerra+84,+Maip%C3%BA&details=Gala+de+8%C2%B0+b%C3%A1sico+%E2%80%93+Curso+8vo+B.+C%C3%B3digo+de+vestimenta:+semi+formal,+coctel." target="_blank" rel="noopener">Agendar</a>
+      <a class="btn ghost" href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=Gala+8%C2%B0+B&dates=20261206T220000Z/20261207T020000Z&location=Jorge+Guerra+84,+Maip%C3%BA&details=Gala+de+8%C2%B0+b%C3%A1sico+%E2%80%93+Curso+8vo+B.+C%C3%B3digo+de+vestimenta:+semi+formal,+coctel." target="_blank" rel="noopener">Agendar</a>
     </div>
   </section>
 
@@ -347,8 +360,8 @@
 (function(){
   'use strict';
 
-  // ---------- Cuenta regresiva (domingo 6 dic 2026, 18:00, hora de Chile UTC-3) ----------
-  var target = new Date('2026-12-06T18:00:00-03:00').getTime();
+  // ---------- Cuenta regresiva (domingo 6 dic 2026, 19:00 inicio de la gala, hora de Chile UTC-3) ----------
+  var target = new Date('2026-12-06T19:00:00-03:00').getTime();
   var nodes = {};
   document.querySelectorAll('#count .num').forEach(function(n){ nodes[n.dataset.u] = n; });
   var last = {};
